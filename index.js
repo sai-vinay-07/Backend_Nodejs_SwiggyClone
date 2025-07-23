@@ -25,7 +25,7 @@ mongoose.connect(process.env.MONGO_URL)
 
 // Base route
 app.get('/', async (req, res) => {
-  return res.status(200).send("🚀 Base Route is Running");
+  return res.status(200).send("<h1>Welcome to Swiggy");
 });
 
 // Vendor routes
@@ -43,7 +43,8 @@ app.use('/home',(req,res)=>{
   res.send("<h1>Welcome to Swiggy");
 })
 
+const port = process.env.port || 4000;
 // Start server
-app.listen(4000, () => {
+app.listen(port, () => {
   console.log("🚀 Server is running at http://localhost:4000");
 });
